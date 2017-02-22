@@ -1,2 +1,9 @@
----
-# vars file for ebsvolume
+hostname: 172.31.72.64
+instance_id: i-0bd84cc46d38ea518
+volume_size: 4
+block_device: /dev/xvdf
+volume_type: gp2
+iops: 120
+mount_dir: /home/ec2-user/testansible
+fs_type: ext4
+dir_permissions: 0777
