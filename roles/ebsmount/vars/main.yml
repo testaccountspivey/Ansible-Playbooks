@@ -6,4 +6,4 @@ volume_type: gp2
 iops: 120
 mount_dir: /home/ec2-user/testansible
 fs_type: ext4
-dir_permissions: 0777
+directory_permissions: 0777
