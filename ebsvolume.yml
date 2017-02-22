@@ -1,0 +1,12 @@
+- name: Create EBS Volume
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  roles:
+    - ebsvolume
+- name:
+  hosts: "{{ hostname }}"
+  become: true
+  roles:
+    - ebsmount
+
