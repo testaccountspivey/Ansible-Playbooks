@@ -1,0 +1,20 @@
+- name: Printing the volume information
+  debug: var=ec2_vol
+- name: install xfsprogs
+  action: yum pkg=xfsprogs state=latest
+# Create a directory if it doesn't exist
+- file:
+    path: "{{ mount_dir }}"
+    state: directory
+    mode: "{{ directory_permissions }}"
+- name: Format New Volume/ Creating a new filesystem
+  filesystem:
+    dev="{{ block_device }}"
+    fstype=ext4
+    force=yes
+- name: edit fstab and mount the vol
+  mount:
+    name: "{{ mount_dir }}"
+    src: "{{ block_device }}"
+    fstype: ext4
+    state: mounted

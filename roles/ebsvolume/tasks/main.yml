@@ -1,0 +1,11 @@
+- name: Creating a Volume
+  ec2_vol:
+    instance: "{{ instance_id }}"
+    volume_size: "{{ volume_size }}"
+    device_name: "{{ block_device }}"
+    region: 'us-east-1'
+    zone: a
+    volume_type: "{{ volume_type }}"
+    iops: "{{ iops }}"
+    delete_on_termination: yes
+  register: ec2_vol
