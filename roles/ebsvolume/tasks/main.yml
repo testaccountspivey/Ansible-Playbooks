@@ -10,4 +10,4 @@
     delete_on_termination: yes
   register: ec2_vol
 - name: Printing the volume information
-      debug: var=ec2_vol
+  debug: var=ec2_vol
