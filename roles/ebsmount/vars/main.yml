@@ -1,4 +1,4 @@
-hostname: 172.31.72.64
+hostname: 52.202.33.28
 instance_id: i-0bd84cc46d38ea518
 volume_size: 4
 block_device: /dev/xvdf
