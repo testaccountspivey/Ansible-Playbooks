@@ -1,10 +1,16 @@
-- name: Create EBS Volume
-  hosts: localhost
-  roles:
-    - ebsvolume
-- name:
-  hosts: "{{ hostname }}"
-  become: true
-  roles:
-    - ebsmount
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  tasks:
+    - name: Create EBS Volume
+      hosts: localhost
+      roles:
+        - ebsvolume
+    - name:
+      hosts: "{{ hostname }}"
+      become: true
+      roles:
+        - ebsmount
 
